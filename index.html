@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+   <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" 
+  integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS Stylesheet--> 
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GoogleFont--> 
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="page">
+        <h1>Crimes in Australia Through the Years (States)</h1>    
+    <div class="container-normal">
+        <div>
+            <p style="font-size: larger;">
+                Dive into a comprehensive exploration of crime statistics across Australia, featuring <b>interactive maps</b>, <b>trend analyses</b>, and <b>demographic breakdowns</b>. Uncover patterns and insights into various types of crimes from <b style="color: darkblue;">domestic violence to sexual assaults</b> over the last decade.
+            </p>
+        </div>
+        <div>
+            <img src="data/image1.png" alt="Image 1">
+        </div>
+    </div>
+
+
+    <div class="container2-normal">
+        <div>
+            <h2>
+                A Country of Crimes Mapped?
+            </h2>
+            <p>Examine the spatial distribution of crime throughout the Australian states <b>between 2014 and 2023</b> with the interactive choropleth map. One may quickly compare the visual intensity of crime by region using this visualisation, which shows the <b>number of crimes per 10,000 people</b>. A range of <b style="color: teal;">100 to over 2000 crimes per 10,000 persons</b> indicates that the <b style="color: darkblue;">deeper the blue</b>, the <b style="color: darkblue;">higher the crime rate</b>. To view the evolution of crime rates over the course of a decade, use the <b>slider</b> beneath the map to select a particular year. We can see that at <b>2014</b>, <b style="color: teal;">Western Australia</b> and <b style="color: teal;">Northern Territory</b> has a higher rate of crimes, however at <b>2023</b>, the rate of crimes in <b style="color: teal;">New South Wales</b> <b style="color: indigo;">increased rapidly</b> and has a <b style="color: indigo;">higher rate</b> compared to the other states</p>
+        </div>
+        <div id=states></div>
+    </div>
+
+    <div class="container3-normal">
+        <h2>Interactive Insights into Family and Domestic Violence Across Australian States</h2>
+        <div class="flex-container">
+            <div id="doughnutchart" class="flex-item">
+                <!-- Doughnut chart goes here -->
+            </div>
+            <div class="flex-item">
+                <p>Looking deeper into <b style="color: darkblue;">domestic violence</b>,the <b>doughnut chart</b> on the left offers an engaging depiction of <b>incidences by state</b>. To observe the changes in incidents over time, change the year. The <b>bar graph</b> on the right provides a detailed knowledge of <b>gender-specific patterns</b> by providing a comparative study of <b style="color: darkblue;">domestic violence incidences by gender</b> within a specified set of states. Throughout the years, The number of incidences in <b style="color: teal;">New South Wales</b> is <b>almost half of the total number of incidents</b> in <b style="color: teal;">Australia</b>. In those incidents, <b style="color: purple;">females</b> are usually the victims and the <b style="color: purple;">number of female victims</b> have always been a lot greater compared to the <b style="color: blue;">male victims</b> from 2014 until 2023.</p>
+            </div>
+            <div id="gender" class="flex-item">
+                <!-- Gender chart goes here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container2-normal">
+        <div>
+            <h2>Correlation Between Age and States</h2>
+            <p>The <b>heatmap</b>, which displays data from <b>younger children under 9 years old to seniors over 65</b>, demonstrates the notable <b>differences</b> in victimisation across <b>life stages</b>. For example, the <b></b> shows that victims in most states are <b>more likely</b> to be in the <b style="color: darkblue;">age category of 25–34</b>, especially in <b style="color: teal;">Victoria</b> and <b style="color: teal;">New South Wales</b>. This suggests that <b style="color: teal;">Victoria and New South Wales</b>> is <b style="color: indigo;">more vulnerable</b> or <b style="color: indigo;">more likely to report crimes</b>. On the other hand, there are generally <b>fewer</b> recorded victims in the <b style="color: darkblue;">youngest age group (0–9 years)</b> and the <b style="color: darkblue;">oldest age group (65 and beyond)</b>. This could be due to <b style="color: darkblue;">different social</b>, <b style="color: darkblue;">familial</b>, or <b style="color: darkblue;">structural interactions</b> with crime in these age groups. </p>
+        </div>
+        <div id=heatmap></div>
+    </div>
+
+    <div class="container3-normal">
+        <h2>Evolution of Crime Patterns in Australia: A Detailed Analysis by Offence and Gender</h2>
+        <div class="flex-container">
+            <div id="offencebyyear" class="flex-item">
+                <!-- Doughnut chart goes here -->
+            </div>
+            <div class="flex-item">
+                <p>The <b>line graph on the left</b> delineates trends in various offenses, including <b style="color: darkblue;">sexual assault</b>, <b style="color: darkblue;">homicide</b>, <b style="color: darkblue;">kidnapping</b>, <b style="color: darkblue;">extortion</b>, and <b style="color: darkblue;">unlawful entry</b>. It highlights a <b style="color: olive;">stable trend</b> in crimes like <b style="color: darkblue;">kidnapping and extortion</b>, contrasting sharply with the <b>escalating incidents</b> of <b style="color: darkblue;">sexual assault</b>, particularly among <b style="color: purple;">females</b>. The graph to the right emphasizes a <b style="color: olive;">significant rise</b> in <b style="color: darkblue;">sexual assault</b> cases among <b style="color: purple;">women</b>, starkly <b style="color: olive;">increasing since 2016</b>, unlike the stable numbers among men.</p>
+            </div>
+            <div id="SAgenderinteractive" class="flex-item">
+                <!-- Gender chart goes here -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="credit-container">
+        <p>Created by <b>Vincy Florent (31851711)</b> <br>
+            Data obtained from <b><a href="https://www.abs.gov.au/statistics/people/crime-and-justice/recorded-crime-victims/2023#key-statistics">Australian Bureau of Statistics</a></b> <br>
+            Image obtained from <b><a href="https://stock.adobe.com/search?k=investigation+board&asset_id=523362044">Adobe Stock</a></b> <br>
+        </p>
+    </div> 
+
+</div>
+
+<script type="text/javascript">
+    var specVis1 = "./js/states.vg.json";
+    var donutchart = "./js/familydomesticviolence.vg.json";
+    var specVis2 = "./js/agestate.vg.json";
+    var specVis3 = "./js/gender.vg.json";
+    var specVis4 = "./js/offencebyyear.vg.json";
+    var specVis5 = "./js/SAgenderinteractive.vg.json";
+
+
+    vegaEmbed('#states', specVis1, {
+        "actions": false
+    });
+
+    vegaEmbed('#doughnutchart', donutchart, {
+        "actions": false
+    }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#gender', specVis3, {
+        "actions": false
+    }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#heatmap', specVis2, { "actions": false }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#offencebyyear', specVis4, { "actions": false }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error)
+
+    vegaEmbed('#SAgenderinteractive', specVis5, { "actions": false }).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+</script>
+</body>
+</html>
