@@ -1,0 +1,137 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Sexual Assault (Gender)", "subtitle": "Hint: Hover above the line to focus", "subtitleFont": "Barlow"},
+    "width": 120,
+    "height": 280,
+    "data": {
+        "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/sexual_assault_by_gender.csv"
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Number",
+            "type": "quantitative",
+            "title": "Victims"
+        },
+        "color": {
+            "field": "Gender",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Male", "Female"],
+                "range": ["blue", "#800080"]
+            },
+            "legend": null
+        },
+        "opacity": {
+            "condition": {
+                "selection": "hover",
+                "value": 1
+            },
+            "value": 0.2
+        }
+    },
+    "layer": [
+        {
+            "description": "transparent layer to make it easier to trigger selection",
+            "selection": {
+                "hover": {
+                    "type": "single",
+                    "on": "mouseover",
+                    "empty": "all",
+                    "fields": [
+                        "Gender"
+                    ]
+                }
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 10,
+                "stroke": "transparent"
+            },
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "Number",
+                        "type": "quantitative",
+                        "title": "Victims Assaulted"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "temporal",
+                        "timeUnit": "year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Gender",
+                        "type": "nominal"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": "line"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "max",
+                    "field": "Year"
+                },
+                "y": {
+                    "aggregate": {
+                        "argmax": "Year"
+                    },
+                    "field": "Number"
+                }
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "circle"
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "font": "Barlow",
+                        "dx": 8
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "Gender",
+                            "type": "nominal"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "labelFont": "Barlow",
+            "titleFont": "Barlow"
+        },
+        "legend": {
+            "labelFont": "Barlow",
+            "titleFont": "Barlow"
+        },
+        "header": {
+            "labelFont": "Barlow",
+            "titleFont": "Barlow"
+        },
+        "title": {
+            "font": "Barlow",
+            "fontSize": 16,
+            "fontWeight": 600
+        }
+    }
+}

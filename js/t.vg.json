@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    },
+    "width": 100,
+    "height": 100,
+    "params": [
+      {
+        "name": "selectState",
+        "select": {
+          "type": "point",
+          "fields": ["State"],
+          "clear": "dblclick"
+        }
+      }
+    ],
+    "title": {
+      "text": "Family and Domestic Violence Incidents",
+      "subtitle": "Interactive Analysis by Year and State",
+      "fontSize": 20,
+      "color": "dodgerblue"
+    },
+    "transform": [
+      {
+        "filter": "datum.Year == 2020"
+      },
+      {
+        "aggregate": [{"op": "sum", "field": "Number of Offense", "as": "Total Offenses"}],
+        "groupby": ["State", "Year"]
+      }
+    ],
+    "mark": {"type": "arc", "innerRadius": 35, "outerRadius": 200},
+    "encoding": {
+      "theta": {"field": "Total Offenses", "type": "quantitative"},
+      "color": {
+        "field": "State", 
+        "type": "nominal",
+        "legend": {"title": "State"}
+      },
+      "tooltip": [
+        {"field": "State", "type": "nominal"},
+        {"field": "Year", "type": "ordinal"},
+        {"field": "Total Offenses", "type": "quantitative", "format": ","}
+      ],
+      "opacity": {
+        "condition": {"param": "selectState", "empty": false, "value": 1},
+        "value": 0.2
+      }
+    }
+  }

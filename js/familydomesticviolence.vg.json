@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+  },
+  "title": {
+    "text": "By State",
+    "subtitle": "Hint: Hover above the chart to see data",
+    "subtitleFont": "Barlow",
+    "fontSize": 18,
+    "color": "black",
+    "font": "Barlow"
+  },
+  "width": 100,
+  "height": 340,
+  "config": {
+    "text": {"font": "Barlow"},
+    "view": {"stroke": "transparent"},
+    "arc": {"fill": "steelblue"},
+    "legend": {
+      "labelFont": "Barlow",
+      "titleFont": "Barlow"
+    }
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2014,
+      "bind": {
+        "input": "range",
+        "min": 2014,
+        "max": 2023,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "year(datum.Year) == selectedYear"
+    }
+  ],
+  "mark": {"type": "arc", "innerRadius": 20, "outerRadius": 85},
+  "encoding": {
+    "theta": {
+      "aggregate": "sum",
+      "field": "Number of Offense",
+       "type": "quantitative",
+      "stack" : true},
+    "color": {
+      "field": "State", 
+      "type": "nominal",
+      "scale": {
+        "domain": ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+        "range": ["#607d3B", "#241571", "#80471C", "#9A7B4F", "#311432", "#FDA172", "#E3C565", "#0492C2"]
+      },
+      "legend": {
+        "title": "State",
+        "labelFontSize": 6.5,
+        "orient": "bottom",
+        "columns": 2
+      }
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {"aggregate": "sum", 
+      "field": "Number of Offense", 
+      "type": "quantitative", 
+      "format": ","}
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}

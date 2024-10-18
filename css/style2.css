@@ -1,0 +1,148 @@
+/* General body styling */
+body * {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+/* Specific container for page content */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 800px; /* Adjust to your desired width */
+    background-color: #e7f7f4;
+    padding: 50px;
+    padding-top: 35px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 900;
+}
+
+/* Styling for containers with normal content */
+.container-normal {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Additional styles for the description and image within the container */
+.container-normal div {
+    flex: 1; /* Each child will take equal width */
+    padding: 10px; /* Spacing between text and image */
+}
+
+/* .container-normal p {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+} */
+
+.container-normal img {
+    width: 100%; /* Full width of its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.container2-normal {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items horizontally */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.container2-normal h2 {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+}
+
+/* .container2-normal p {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+} */
+
+.container3-normal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.container3-normal h2 {
+    text-align: center;
+    margin-bottom: 20px;  /* Adds space below the title */
+    font-family: "Barlow", sans-serif;
+}
+
+/* .container3-normal p {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+} */
+
+.flex-container {
+    display: flex; /* This establishes the flex context for children */
+    justify-content: space-between; /* Distributes space between children */
+}
+
+.flex-item {
+    flex: 1; /* Allows each child to grow and take up equal space */
+    margin: 0 10px; /* Adds margin between flex items, adjust as needed */
+    min-width: 0;
+    padding: 10px; /* Optional: Adds padding within each flex item */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+}
+
+.desc-head {
+    background-color: #CCE0AC;
+    text-align: center;
+    width: auto; /* Adjust to take appropriate space */
+    padding: 10px; /* Uniform padding */
+    border-radius: 5px;
+}
+
+.credit-container {
+    background-color: #FFF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'Afacad Flux', sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.credit-container p {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 350,
+  "title": {"text": "Number of Crimes Happening in Australia By Year (State)", "font": "Barlow", "fontSize": 18, "subtitle": "Hint: Hover above the states to see the data", "subtitleFont": "Barlow"},
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2014,
+      "bind": {
+        "input": "range",
+        "min": 2014,
+        "max": 2023,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "projection": {"type": "equalEarth", "rotate": [-132, 0, 0]},
+  "data":{
+    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/choropleth.csv"
+    },
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/australiastates.json",
+         "format": {
+          "type": "topojson", 
+          "feature": "australiamap"
+       }
+        },
+        "key": "properties.name"
+      },
+      "as": "geo"
+    },
+    {
+      "filter": "year(datum.Year) == selectedYear"
+    },
+    {
+      "calculate": "datum.Number/datum.Population * 10000", "as": "Crimes per 10,000 population"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+    "color": {
+      "field": "Crimes per 10,000 population",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [100, 300, 400, 450, 500, 550, 600, 700, 1000, 1500, 2000]
+      },
+      "legend": {
+        "title": "Crimes per 10,000 population",
+        "labelFont": "Barlow",
+        "titleFont": "Barlow",
+        "titleFontSize": 12,
+        "labelFontSize": 10
+      }
+    },
+    
+    "tooltip": [
+       {
+            "field": "Year",
+            "type": "quantitative",
+            "title": "Year"
+          },
+      {"field": "State", "type": "nominal", "title": "State"},
+      {"field": "Number", "type": "quantitative"}
+    ]
+  }
+  
+}

@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Offences over the Years",
+      "font": "Barlow",
+      "fontSize": 17
+    },
+    "width": 130,
+    "height": 130,
+    "data": {
+      "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/offencebyyear.csv"
+    },
+    "transform": [
+      {
+        "filter": {"selection": "offenceFilter"}
+      }
+    ],
+    "selection": {
+      "offenceFilter": {
+        "type": "multi",
+        "fields": ["Offence"],
+        "bind": {
+          "input": "select",
+          "options": [null, "Homicide and related offences", "Sexual assault", "Kidnapping/abduction", "Blackmail/extortion", "Unlawful entry with intent"],
+          "labels": ["All", "Homicide and Related Offences", "Sexual Assault", "Kidnapping/Abduction", "Blackmail/Extortion", "Unlawful Entry with Intent"],
+          "name": "Filter by Offence: "
+        }
+      }
+    },
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "axis": {"title": "Year", "labelFont": "Barlow", "titleFont": "Barlow"}
+      },
+      "y": {
+        "field": "Number",
+        "type": "quantitative",
+        "axis": {"title": "Number of Offences", "labelFont": "Barlow", "titleFont": "Barlow"}
+      },
+      "color": {
+        "field": "Offence",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Homicide and related offences", "Sexual assault", "Kidnapping/abduction", "Blackmail/extortion", "Unlawful entry with intent"],
+          "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#FDDFAC", "#9467bd"]
+        },
+        "legend": {
+          "title": "Type of Offence",
+          "orient": "bottom",
+          "columns": 1,
+          "labelFontSize": 8,
+          "labelFont": "Barlow",
+          "titleFont": "Barlow"
+        }
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal"},
+        {"field": "Number", "type": "quantitative"},
+        {"field": "Offence", "type": "nominal"}
+      ]
+    },
+    "config": {
+      "line": {
+        "point": true
+      }
+    }
+  }

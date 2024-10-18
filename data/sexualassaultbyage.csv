@@ -1,0 +1,65 @@
+Age,State,Number
+0-9 Years,New South Wales,5984
+0-9 Years,Victoria,1489
+0-9 Years,Queensland,3134
+0-9 Years,South Australia,441
+0-9 Years,Western Australia,1011
+0-9 Years,Tasmania,202
+0-9 Years,Northern Territory,81
+0-9 Years,Australian Capital Territory,74
+10-17 Years,New South Wales,13271
+10-17 Years,Victoria,4696
+10-17 Years,Queensland,5990
+10-17 Years,South Australia,1293
+10-17 Years,Western Australia,3186
+10-17 Years,Tasmania,423
+10-17 Years,Northern Territory,245
+10-17 Years,Australian Capital Territory,210
+18-24 Years,New South Wales,3673
+18-24 Years,Victoria,2093
+18-24 Years,Queensland,2699
+18-24 Years,South Australia,756
+18-24 Years,Western Australia,841
+18-24 Years,Tasmania,186
+18-24 Years,Northern Territory,164
+18-24 Years,Australian Capital Territory,176
+25-34 Years,New South Wales,2985
+25-34 Years,Victoria,2027
+25-34 Years,Queensland,2345
+25-34 Years,South Australia,691
+25-34 Years,Western Australia,846
+25-34 Years,Tasmania,157
+25-34 Years,Northern Territory,198
+25-34 Years,Australian Capital Territory,134
+35-44 Years,New South Wales,1831
+35-44 Years,Victoria,1251
+35-44 Years,Queensland,1501
+35-44 Years,South Australia,424
+35-44 Years,Western Australia,462
+35-44 Years,Tasmania,113
+35-44 Years,Northern Territory,126
+35-44 Years,Australian Capital Territory,96
+45-54 Years,New South Wales,917
+45-54 Years,Victoria,556
+45-54 Years,Queensland,743
+45-54 Years,South Australia,208
+45-54 Years,Western Australia,278
+45-54 Years,Tasmania,47
+45-54 Years,Northern Territory,60
+45-54 Years,Australian Capital Territory,20
+55-64 Years,New South Wales,299
+55-64 Years,Victoria,213
+55-64 Years,Queensland,241
+55-64 Years,South Australia,76
+55-64 Years,Western Australia,77
+55-64 Years,Tasmania,19
+55-64 Years,Northern Territory,12
+55-64 Years,Australian Capital Territory,8
+65 Years and over,New South Wales,356
+65 Years and over,Victoria,173
+65 Years and over,Queensland,179
+65 Years and over,South Australia,135
+65 Years and over,Western Australia,80
+65 Years and over,Tasmania,7
+65 Years and over,Northern Territory,10
+65 Years and over,Australian Capital Territory,6

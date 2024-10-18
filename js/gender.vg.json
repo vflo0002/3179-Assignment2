@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    },
+    "title": {
+      "text": "By Gender",
+      "fontSize": 18,
+      "color": "black",
+      "font": "Barlow"
+    },
+    "width": 80,
+    "height": 320,
+    "config": {
+      "view": {"stroke": "transparent"},
+      "text": {"font": "Barlow"},
+      "legend": {"labelFont": "Barlow", "titleFont": "Barlow"},
+      "axis": {"labelFont": "Barlow", "titleFont": "Barlow"}
+    },
+    "params": [
+      {
+        "name": "selectedYear",
+        "value": 2014,
+        "bind": {
+          "input": "range",
+          "min": 2014,
+          "max": 2023,
+          "step": 1,
+          "name": "Year: "
+        }
+      },
+      {
+        "name": "State_selection",
+        "value": "New South Wales",
+        "bind": {
+          "input": "select",
+          "options": ["New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+          "name": "State: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "year(datum.Year) == selectedYear"
+      },
+      {
+        "filter": "State_selection == null || datum.State == State_selection"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Sex",
+        "type": "nominal",
+        "axis": {"title": "Gender"}
+      },
+      "y": {
+        "field": "Number of Offense",
+        "type": "quantitative",
+        "axis": {"title": "Number of Offenses"}
+      },
+      "color": {
+        "field": "Sex",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Males", "Females"],
+          "range": ["#1f77b4", "#9E42FF"]
+        }
+      },
+      "tooltip": [
+        {"field": "Sex", "type": "nominal"},
+        {"field": "Number of Offense", "type": "quantitative", "format": ","}
+      ]
+    },
+    "view": {
+      "stroke": null
+    }
+}
