@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/data/familydomesticviolence.csv"
   },
   "vconcat": [
     {
       "width": 250,
       "height": 250,
       "data": {
-    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/data/familydomesticviolence.csv"
   },
       "transform": [
         {
@@ -29,7 +29,7 @@
       "width": 350,
       "height": 300,
       "data": {
-    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/data/familydomesticviolence.csv"
   },
       "transform": [
         {

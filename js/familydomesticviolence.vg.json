@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/data/familydomesticviolence.csv"
+    "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/data/familydomesticviolence.csv"
   },
   "title": {
     "text": "By State",

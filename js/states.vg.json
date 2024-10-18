@@ -18,14 +18,14 @@
   ],
   "projection": {"type": "equalEarth", "rotate": [-132, 0, 0]},
   "data":{
-    "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/choropleth.csv"
+    "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/data/choropleth.csv"
     },
   "transform": [
     {
       "lookup": "State",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/vflo0002/3179/refs/heads/main/australiastates.json",
+          "url": "https://raw.githubusercontent.com/vflo0002/3179-Assignment2/refs/heads/main/australiastates.json",
          "format": {
           "type": "topojson", 
           "feature": "australiamap"
